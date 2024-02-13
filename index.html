@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>gerador de senhas</title>
+</head>
+<body>
+    <div class="glitch-wrapper">
+        <div class="glitch" data-glitch="Gerador de senhas">Gerador de senhas</div>
+     </div>
+    <main>
+        <div class="valores">
+            <p>O tamanho da sua senha será de: <span id="tamanhoSenha">17</span></p>
+            <input type="range" min="6" max="25" step="1" id="inputRange" value="16" oninput="valorSenha(this.value)">
+        </div>
+        <section class="detalhes">
+            <p>Escolha o que terá na sua senha:</p>
+                <div class="checkGroup">
+                    <label class="switch">
+                        <input type="checkbox" id="min" checked>
+                        <span class="slider"></span>
+                      </label><label for="min">Letras minusculas</label>
+                </div>
+                <div class="checkGroup">
+                    <label class="switch">
+                        <input type="checkbox" id="mai" checked>
+                        <span class="slider"></span>
+                      </label><label for="min">Letras maiusculas</label>
+                </div>
+                <div class="checkGroup">
+                    <label class="switch">
+                        <input type="checkbox" id="num" checked>
+                        <span class="slider"></span>
+                      </label><label for="min">Numeros</label>
+                </div>
+                <div class="checkGroup">
+                    <label class="switch">
+                        <input type="checkbox" id="car" checked>
+                        <span class="slider"></span>
+                      </label><label for="min">Caracteres especiais</label>
+                </div>
+        </section>            
+        <button id="btnSenha" onclick="gerarSenha()">gerar senha</button>
+        <div id="contentSenha" class="hide">
+            <p>A senha gerada foi:</p>
+            <p id="senha"></p>
+        </div>
+    </main>
+    <script src="assets/script.js"></script>
+</body>
+</html>
